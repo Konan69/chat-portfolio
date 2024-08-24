@@ -19,26 +19,7 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
     handleSubmit,
     isLoading,
     error,
-  } = useChat({
-    initialMessages: [
-      { id: "1", role: "assistant", content: "Hello, how can I help you?" },
-      {
-        id: "2",
-        role: "user",
-        content: "I need help with my home automation system.",
-      },
-      {
-        id: "3",
-        role: "assistant",
-        content: `[github](https://github.com/github)
-List
-- Item 1
-- Item 2
-- Item 3
-`,
-      },
-    ],
-  });
+  } = useChat({});
 
   useEffect(() => {
     if (scrollRef.current) {
