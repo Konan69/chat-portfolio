@@ -13,9 +13,23 @@ import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
 import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retriever";
 import { createRetrievalChain } from "langchain/chains/retrieval";
 import { HumanMessage, AIMessage } from "@langchain/core/messages";
+import { VectorStoreRetriever } from "@langchain/core/vectorstores";
 import { Redis } from "@upstash/redis";
 
 //Todo: reduce latency
+
+let cachedRetriever: VectorStoreRetriever | undefined;
+
+async function getCachedRetriever() {
+  if (!cachedRetriever) {
+    const vectorStore = await getVectorStore();
+    if (!vectorStore) {
+      throw new Error("Vectorstore not found");
+    }
+    cachedRetriever = vectorStore.asRetriever();
+  }
+  return cachedRetriever;
+}
 
 export async function POST(req: Request) {
   try {
@@ -30,13 +44,14 @@ export async function POST(req: Request) {
           : new AIMessage(m.content),
       );
 
+    // Retriever setup
+    const retriever = await getCachedRetriever();
+
     const currentMessageContent = messages[messages.length - 1].content;
     // TODO: add rate limit, fix cache
     const cache = new UpstashRedisCache({
       client: Redis.fromEnv(),
     });
-
-    console.log(cache);
 
     const chatModel = new ChatAnthropic({
       model: "claude-3-haiku-20240307",
@@ -46,25 +61,8 @@ export async function POST(req: Request) {
       clientOptions: {
         defaultHeaders: {},
       },
-
-      callbacks: [
-        {
-          handleLLMNewToken(token: string) {
-            // logging here if needed
-          },
-        },
-      ],
       anthropicApiKey: process.env.ANTHROPIC_API_KEY,
     });
-
-    const rephrasingModel = new ChatAnthropic({
-      model: "claude-3-haiku-20240307",
-      verbose: true,
-      cache,
-      anthropicApiKey: process.env.ANTHROPIC_API_KEY,
-    });
-
-    const retriever = (await getVectorStore())!.asRetriever();
 
     const rephrasePrompt = ChatPromptTemplate.fromMessages([
       new MessagesPlaceholder("chat_history"),
@@ -77,7 +75,7 @@ export async function POST(req: Request) {
     ]);
 
     const historyAwareRetrieverChain = await createHistoryAwareRetriever({
-      llm: rephrasingModel,
+      llm: chatModel,
       retriever,
       rephrasePrompt,
     });
