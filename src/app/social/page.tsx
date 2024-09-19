@@ -18,15 +18,6 @@ export default function Page() {
         <ul className="list-inside list-disc space-y-1">
           <li>
             <a
-              href="https://www.instagram.com/codinginflow"
-              className="text-primary hover:underline"
-            >
-              Instagram
-            </a>
-          </li>
-
-          <li>
-            <a
               href="https://www.twitter.com/mualim_dev"
               className="text-primary hover:underline"
             >
