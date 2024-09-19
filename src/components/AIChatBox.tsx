@@ -70,7 +70,7 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
               message={{
                 id: "error",
                 role: "assistant",
-                content: "something went wrong, please try again later",
+                content: error.message,
               }}
             />
           )}

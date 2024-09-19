@@ -14,7 +14,9 @@ import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retr
 import { createRetrievalChain } from "langchain/chains/retrieval";
 import { HumanMessage, AIMessage } from "@langchain/core/messages";
 import { VectorStoreRetriever } from "@langchain/core/vectorstores";
+import { RedisRateLimiter } from "@/lib/utils";
 import { Redis } from "@upstash/redis";
+import { NextRequest } from "next/server";
 
 //Todo: reduce latency
 
@@ -31,10 +33,29 @@ async function getCachedRetriever() {
   return cachedRetriever;
 }
 
-export async function POST(req: Request) {
+// TODO: fix cache
+const cache = new UpstashRedisCache({
+  config: {
+    url: process.env.UPSTASH_REDIS_REST_URL,
+    token: process.env.UPSTASH_REDIS_REST_TOKEN,
+  },
+});
+
+const rateLimiter = RedisRateLimiter.getInstance();
+
+export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+    const ip = req.ip ?? "127.0.0.1";
     const messages: VercelMessage[] = body.messages;
+
+    const { success } = await rateLimiter.limit(ip);
+
+    if (!success) {
+      return new Response("Rate Limited, try again in 20 minutes", {
+        status: 429,
+      });
+    }
 
     const chat_history = messages
       .slice(0, -1)
@@ -48,10 +69,6 @@ export async function POST(req: Request) {
     const retriever = await getCachedRetriever();
 
     const currentMessageContent = messages[messages.length - 1].content;
-    // TODO: add rate limit, fix cache
-    const cache = new UpstashRedisCache({
-      client: Redis.fromEnv(),
-    });
 
     const chatModel = new ChatAnthropic({
       model: "claude-3-haiku-20240307",
