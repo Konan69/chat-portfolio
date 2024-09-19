@@ -29,17 +29,17 @@
 
 <br>
 
-#####  Table of Contents
+##### Table of Contents
 
 - [ Overview](#-overview)
 - [ Features](#-features)
 - [ Repository Structure](#-repository-structure)
 - [ Modules](#-modules)
 - [ Getting Started](#-getting-started)
-    - [ Prerequisites](#-prerequisites)
-    - [ Installation](#-installation)
-    - [ Usage](#-usage)
-    - [ Tests](#-tests)
+  - [ Prerequisites](#-prerequisites)
+  - [ Installation](#-installation)
+  - [ Usage](#-usage)
+  - [ Tests](#-tests)
 - [ Project Roadmap](#-project-roadmap)
 - [ Contributing](#-contributing)
 - [ License](#-license)
@@ -47,19 +47,19 @@
 
 ---
 
-##  Overview
+## Overview
 
 <code>❯ REPLACE-ME</code>
 
 ---
 
-##  Features
+## Features
 
 <code>❯ REPLACE-ME</code>
 
 ---
 
-##  Repository Structure
+## Repository Structure
 
 ```sh
 └── chat-portfolio/
@@ -70,7 +70,8 @@
     ├── postcss.config.mjs
     ├── public
     │   ├── next.svg
-    │   └── vercel.svg
+    │   ├── vercel.svg
+    │   └── Resume.pdf
     ├── scripts
     │   └── generate.ts
     ├── src
@@ -84,46 +85,46 @@
 
 ---
 
-##  Modules
+## Modules
 
 <details closed><summary>.</summary>
 
-| File | Summary |
-| --- | --- |
+| File                                                                                         | Summary                   |
+| -------------------------------------------------------------------------------------------- | ------------------------- |
 | [postcss.config.mjs](https://github.com/Konan69/chat-portfolio/blob/main/postcss.config.mjs) | <code>❯ REPLACE-ME</code> |
 | [tailwind.config.ts](https://github.com/Konan69/chat-portfolio/blob/main/tailwind.config.ts) | <code>❯ REPLACE-ME</code> |
-| [tsconfig.json](https://github.com/Konan69/chat-portfolio/blob/main/tsconfig.json) | <code>❯ REPLACE-ME</code> |
-| [package.json](https://github.com/Konan69/chat-portfolio/blob/main/package.json) | <code>❯ REPLACE-ME</code> |
-| [next.config.mjs](https://github.com/Konan69/chat-portfolio/blob/main/next.config.mjs) | <code>❯ REPLACE-ME</code> |
-| [package-lock.json](https://github.com/Konan69/chat-portfolio/blob/main/package-lock.json) | <code>❯ REPLACE-ME</code> |
+| [tsconfig.json](https://github.com/Konan69/chat-portfolio/blob/main/tsconfig.json)           | <code>❯ REPLACE-ME</code> |
+| [package.json](https://github.com/Konan69/chat-portfolio/blob/main/package.json)             | <code>❯ REPLACE-ME</code> |
+| [next.config.mjs](https://github.com/Konan69/chat-portfolio/blob/main/next.config.mjs)       | <code>❯ REPLACE-ME</code> |
+| [package-lock.json](https://github.com/Konan69/chat-portfolio/blob/main/package-lock.json)   | <code>❯ REPLACE-ME</code> |
 
 </details>
 
 <details closed><summary>scripts</summary>
 
-| File | Summary |
-| --- | --- |
+| File                                                                                   | Summary                   |
+| -------------------------------------------------------------------------------------- | ------------------------- |
 | [generate.ts](https://github.com/Konan69/chat-portfolio/blob/main/scripts/generate.ts) | <code>❯ REPLACE-ME</code> |
 
 </details>
 
 <details closed><summary>src.components</summary>
 
-| File | Summary |
-| --- | --- |
-| [ThemeToggle.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/components/ThemeToggle.tsx) | <code>❯ REPLACE-ME</code> |
-| [Footer.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/components/Footer.tsx) | <code>❯ REPLACE-ME</code> |
+| File                                                                                                      | Summary                   |
+| --------------------------------------------------------------------------------------------------------- | ------------------------- |
+| [ThemeToggle.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/components/ThemeToggle.tsx)     | <code>❯ REPLACE-ME</code> |
+| [Footer.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/components/Footer.tsx)               | <code>❯ REPLACE-ME</code> |
 | [ThemeProvider.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/components/ThemeProvider.tsx) | <code>❯ REPLACE-ME</code> |
-| [AIChatButton.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/components/AIChatButton.tsx) | <code>❯ REPLACE-ME</code> |
-| [Navbar.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/components/Navbar.tsx) | <code>❯ REPLACE-ME</code> |
-| [AIChatBox.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/components/AIChatBox.tsx) | <code>❯ REPLACE-ME</code> |
+| [AIChatButton.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/components/AIChatButton.tsx)   | <code>❯ REPLACE-ME</code> |
+| [Navbar.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/components/Navbar.tsx)               | <code>❯ REPLACE-ME</code> |
+| [AIChatBox.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/components/AIChatBox.tsx)         | <code>❯ REPLACE-ME</code> |
 
 </details>
 
 <details closed><summary>src.components.ui</summary>
 
-| File | Summary |
-| --- | --- |
+| File                                                                                   | Summary                   |
+| -------------------------------------------------------------------------------------- | ------------------------- |
 | [H3.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/components/ui/H3.tsx) | <code>❯ REPLACE-ME</code> |
 | [H2.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/components/ui/H2.tsx) | <code>❯ REPLACE-ME</code> |
 | [H1.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/components/ui/H1.tsx) | <code>❯ REPLACE-ME</code> |
@@ -132,83 +133,86 @@
 
 <details closed><summary>src.lib</summary>
 
-| File | Summary |
-| --- | --- |
-| [utils.ts](https://github.com/Konan69/chat-portfolio/blob/main/src/lib/utils.ts) | <code>❯ REPLACE-ME</code> |
+| File                                                                                 | Summary                   |
+| ------------------------------------------------------------------------------------ | ------------------------- |
+| [utils.ts](https://github.com/Konan69/chat-portfolio/blob/main/src/lib/utils.ts)     | <code>❯ REPLACE-ME</code> |
 | [astradb.ts](https://github.com/Konan69/chat-portfolio/blob/main/src/lib/astradb.ts) | <code>❯ REPLACE-ME</code> |
 
 </details>
 
 <details closed><summary>src.app</summary>
 
-| File | Summary |
-| --- | --- |
+| File                                                                                   | Summary                   |
+| -------------------------------------------------------------------------------------- | ------------------------- |
 | [globals.css](https://github.com/Konan69/chat-portfolio/blob/main/src/app/globals.css) | <code>❯ REPLACE-ME</code> |
-| [page.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/app/page.tsx) | <code>❯ REPLACE-ME</code> |
-| [layout.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/app/layout.tsx) | <code>❯ REPLACE-ME</code> |
+| [page.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/app/page.tsx)       | <code>❯ REPLACE-ME</code> |
+| [layout.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/app/layout.tsx)   | <code>❯ REPLACE-ME</code> |
 
 </details>
 
 <details closed><summary>src.app.social</summary>
 
-| File | Summary |
-| --- | --- |
+| File                                                                                    | Summary                   |
+| --------------------------------------------------------------------------------------- | ------------------------- |
 | [page.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/app/social/page.tsx) | <code>❯ REPLACE-ME</code> |
 
 </details>
 
 <details closed><summary>src.app.api.chat</summary>
 
-| File | Summary |
-| --- | --- |
+| File                                                                                      | Summary                   |
+| ----------------------------------------------------------------------------------------- | ------------------------- |
 | [route.ts](https://github.com/Konan69/chat-portfolio/blob/main/src/app/api/chat/route.ts) | <code>❯ REPLACE-ME</code> |
 
 </details>
 
 <details closed><summary>src.app.api.chat.ollama</summary>
 
-| File | Summary |
-| --- | --- |
+| File                                                                                             | Summary                   |
+| ------------------------------------------------------------------------------------------------ | ------------------------- |
 | [route.ts](https://github.com/Konan69/chat-portfolio/blob/main/src/app/api/chat/ollama/route.ts) | <code>❯ REPLACE-ME</code> |
 
 </details>
 
 <details closed><summary>src.app.about</summary>
 
-| File | Summary |
-| --- | --- |
+| File                                                                                   | Summary                   |
+| -------------------------------------------------------------------------------------- | ------------------------- |
 | [page.tsx](https://github.com/Konan69/chat-portfolio/blob/main/src/app/about/page.tsx) | <code>❯ REPLACE-ME</code> |
 
 </details>
 
 ---
 
-##  Getting Started
+## Getting Started
 
-###  Prerequisites
+### Prerequisites
 
 **TypeScript**: `version x.y.z`
 
-###  Installation
+### Installation
 
 Build the project from source:
 
 1. Clone the chat-portfolio repository:
+
 ```sh
 ❯ git clone https://github.com/Konan69/chat-portfolio
 ```
 
 2. Navigate to the project directory:
+
 ```sh
 ❯ cd chat-portfolio
 ```
 
 3. Install the required dependencies:
+
 ```sh
 ❯ npm install
 ```
 
-###  Usage
+### Usage
 
 To run the project, execute the following command:
 
@@ -216,7 +220,7 @@ To run the project, execute the following command:
 ❯ npm run build && node dist/main.js
 ```
 
-###  Tests
+### Tests
 
 Execute the test suite using the following command:
 
@@ -226,15 +230,15 @@ Execute the test suite using the following command:
 
 ---
 
-##  Project Roadmap
+## Project Roadmap
 
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
+- [x] **`Task 1`**: <strike>Implement feature one.</strike>
 - [ ] **`Task 2`**: Implement feature two.
 - [ ] **`Task 3`**: Implement feature three.
 
 ---
 
-##  Contributing
+## Contributing
 
 Contributions are welcome! Here are several ways you can contribute:
 
@@ -279,13 +283,13 @@ Contributions are welcome! Here are several ways you can contribute:
 
 ---
 
-##  License
+## License
 
 This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
 
 ---
 
-##  Acknowledgments
+## Acknowledgments
 
 - List any resources, contributors, inspiration, etc. here.
 
