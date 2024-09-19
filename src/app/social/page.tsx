@@ -18,47 +18,25 @@ export default function Page() {
         <ul className="list-inside list-disc space-y-1">
           <li>
             <a
-              href="https://www.youtube.com/codinginflow?sub_confirmation=1"
-              className="text-primary hover:underline"
-            >
-              YouTube
-            </a>
-          </li>
-          <li>
-            <a
               href="https://www.instagram.com/codinginflow"
               className="text-primary hover:underline"
             >
               Instagram
             </a>
           </li>
+
           <li>
             <a
-              href="https://www.tiktok.com/@codinginflow"
-              className="text-primary hover:underline"
-            >
-              TikTok
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.twitter.com/codinginflow"
+              href="https://www.twitter.com/mualim_dev"
               className="text-primary hover:underline"
             >
               Twitter
             </a>
           </li>
+
           <li>
             <a
-              href="https://www.facebook.com/codinginflow"
-              className="text-primary hover:underline"
-            >
-              Facebook
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.github.com/codinginflow"
+              href="https://www.github.com/Konan69"
               className="text-primary hover:underline"
             >
               GitHub
@@ -66,7 +44,7 @@ export default function Page() {
           </li>
           <li>
             <a
-              href="https://www.linkedin.com/in/codinginflow"
+              href="https://www.linkedin.com/in/konandev/"
               className="text-primary hover:underline"
             >
               LinkedIn
@@ -74,7 +52,7 @@ export default function Page() {
           </li>
           <li>
             <a
-              href="https://www.codinginflow.com/blog"
+              href="https://www.konan.tech/blog"
               className="text-primary hover:underline"
             >
               Blog

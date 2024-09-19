@@ -41,14 +41,14 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
   return (
     <div
       className={cn(
-        "bottom-0 right-0 z-50 w-full max-w-[500] p-1 xl:right-36",
+        "bottom-0 right-0 z-50 w-full max-w-full p-1 pb-0",
         open ? "fixed" : "hidden",
       )}
     >
       <button onClick={onClose} className="mb-1 ms-auto block">
         <XCircle size={30} className="rounded-full bg-background" />
       </button>
-      <div className="flex h-[600px] flex-col rounded border bg-background shadow-xl">
+      <div className="flex h-[500px] flex-col rounded border bg-background shadow-xl">
         <div className="mt-3 h-full  overflow-y-auto px-3">
           {messages.map((message) => (
             <ChatMessage key={message.id} message={message} />
@@ -82,7 +82,8 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
               </p>
               <p>
                 You can ask the chatbot any question about me and it will find
-                the relevant information on this website.
+                the relevant information on this website. <br /> (Rate Limited-
+                5 requests /20 minutes)
               </p>
             </div>
           )}
