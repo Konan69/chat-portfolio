@@ -9,7 +9,6 @@ export function cn(...inputs: ClassValue[]) {
 
 export class RedisRateLimiter {
   static instance: Ratelimit;
-  static cache = new Map();
 
   static getInstance() {
     if (!this.instance) {
