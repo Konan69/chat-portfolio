@@ -49,13 +49,13 @@ export async function POST(req: NextRequest) {
     const ip = req.ip ?? "127.0.0.1";
     const messages: VercelMessage[] = body.messages;
 
-    const { success } = await rateLimiter.limit(ip);
+    // const { success } = await rateLimiter.limit(ip);
 
-    if (!success) {
-      return new Response("Rate Limited, try again in 20 minutes", {
-        status: 429,
-      });
-    }
+    // if (!success) {
+    //   return new Response("Rate Limited, try again in 20 minutes", {
+    //     status: 429,
+    //   });
+    // }
 
     const chat_history = messages
       .slice(0, -1)
@@ -81,18 +81,33 @@ export async function POST(req: NextRequest) {
       anthropicApiKey: process.env.ANTHROPIC_API_KEY,
     });
 
+    // Model for query rephrasing - using a simpler model for better performance
+    const queryModel = new ChatAnthropic({
+      model: "claude-3-haiku-20240307",
+      streaming: false,
+      cache,
+      verbose: false,
+      clientOptions: {
+        defaultHeaders: {},
+      },
+      anthropicApiKey: process.env.ANTHROPIC_API_KEY,
+    });
+
     const rephrasePrompt = ChatPromptTemplate.fromMessages([
+      [
+        "system",
+        "You are a search query optimizer. Your task is to create a concise search query that captures the essential information needed from the current question and relevant context from chat history. Focus on key terms and entities.",
+      ],
       new MessagesPlaceholder("chat_history"),
       ["user", "{input}"],
       [
         "user",
-        "Given the above conversation, generate a search query to look up in order to get information relevant to the current question. " +
-          "Don't leave out any relevant keywords. Only return the query and no other text.",
+        "Create a search query using the most important keywords from the question and context. Keep it under 10 words. Only return the query text.",
       ],
     ]);
 
     const historyAwareRetrieverChain = await createHistoryAwareRetriever({
-      llm: chatModel,
+      llm: queryModel,
       retriever,
       rephrasePrompt,
     });
