@@ -49,13 +49,13 @@ export async function POST(req: NextRequest) {
     const ip = req.ip ?? "127.0.0.1";
     const messages: VercelMessage[] = body.messages;
 
-    // const { success } = await rateLimiter.limit(ip);
+    const { success } = await rateLimiter.limit(ip);
 
-    // if (!success) {
-    //   return new Response("Rate Limited, try again in 20 minutes", {
-    //     status: 429,
-    //   });
-    // }
+    if (!success) {
+      return new Response("Rate Limited, try again in 20 minutes", {
+        status: 429,
+      });
+    }
 
     const chat_history = messages
       .slice(0, -1)
